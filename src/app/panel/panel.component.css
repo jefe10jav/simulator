@@ -1,0 +1,23 @@
+.headerPanel {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.porRealizarHeader {
+    background-color: #1414bc;
+}
+
+.realizandoHeader {
+    background-color: #38761D;
+}
+
+.realizadoHeader {
+    background-color: #fc7e00;
+}
+
+.avatar {
+    border-radius: 50%;
+}

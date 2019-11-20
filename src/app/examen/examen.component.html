@@ -1,0 +1,150 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand"><img
+      src="https://image.jimcdn.com/app/cms/image/transf/dimension=300x10000:format=png/path/sf2bb21fca6ece95c/image/ic1ea960eab2df357/version/1338703613/image.png"
+      class="img-fluid" alt="Responsive image" style="width: 50px; height: 50px;"></a>
+  <!-- Large button group -->
+  <div class="btn-group">
+    <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false" style="background-color: #E3F2FD;">
+      <img src="../../assets/user.png" class="img-fluid" alt="Responsive image" style="width: 40px; height: 40px;">
+      Antonio
+      Garcia <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Personaliar</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Cerrar Sesión</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <!--div class="setters">
+      <div class="minutes-set">
+        <button data-setter="minutes-plus">+</button>
+        <button data-setter="minutes-minus">-</button>
+      </div>
+      <div class="seconds-set">
+        <button data-setter="seconds-plus">+</button>
+        <button data-setter="seconds-minus">-</button>
+      </div>
+    </div-->
+</div>
+
+<div class="container">
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <h1 style="text-align: center;">{{examen.nombre}}</h1>
+        <div class="card-body">
+          <div class="col-12">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width':examen.progreso+'%'}"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <form>
+            <h4>{{examen.preguntas[examen.preguntaActual].pregunta}}</h4>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div class="form-check">
+              <input [(ngModel)]="examen.preguntas[examen.preguntaActual].ru" [value]="examen.preguntas[examen.preguntaActual].r1" class="form-check-input" type="radio" name="r1" id="r1">
+              <label class="form-check-label" for="r1">
+                a) {{examen.preguntas[examen.preguntaActual].r1}}
+              </label>
+            </div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div class="form-check">
+              <input [(ngModel)]="examen.preguntas[examen.preguntaActual].ru" [value]="examen.preguntas[examen.preguntaActual].r2" class="form-check-input" type="radio" name="r2" id="r2">
+              <label class="form-check-label" for="r2">
+                b) {{examen.preguntas[examen.preguntaActual].r2}}
+              </label>
+            </div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div class="form-check">
+              <input [(ngModel)]="examen.preguntas[examen.preguntaActual].ru" [value]="examen.preguntas[examen.preguntaActual].r3" class="form-check-input" type="radio" name="r3" id="r3">
+              <label class="form-check-label" for="r3">
+                c) {{examen.preguntas[examen.preguntaActual].r3}}
+              </label>
+            </div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div class="row">
+              <div class="col-2">
+                <!--button type="button" class="btn btn-outline-primary">Pausa</button-->
+              </div>
+              <div class="col-5">
+                <nav aria-label="Page navigation example">
+                  <!--ul class="pagination justify-content-end">
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                  </ul-->
+                </nav>
+              </div>
+              <div class="col">
+              </div>
+              <div class="col-1">
+              </div>
+              <div class="col-3">
+                <!--button type="button" class="btn btn-outline-primary">Atras</button-->
+                <button type="button" class="btn btn-outline-primary" (click)="siguiente()" *ngIf="!finalizarButton">Siguiente</button>
+                <button type="button" class="btn btn-outline-primary"  data-toggle="modal" data-target="#exampleModal" (click)="finalizar()" *ngIf="finalizarButton">
+                  Finalizar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Evaluación finalizada</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Su puntuación obtenida es: {{examen.puntaje}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cerrar()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
