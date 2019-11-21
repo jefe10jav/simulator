@@ -36,15 +36,22 @@
   <p></p>
   <p></p>
   <p></p>
-  <div class="row" style="padding-top: 100px;">
+  <div class="row" style="padding-top:50px;">
+    <div class="col-9"></div>
+    <div class="col-3">
+      <h6>Tiempo restante:<p id="clock"></p>
+      </h6>
+    </div>
+
     <div class="col-12">
       <div class="card">
         <h1 style="text-align: center;">{{examen.nombre}}</h1>
         <div class="card-body">
           <div class="col-12">
             <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width':examen.progreso+'%'}"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                [ngStyle]="{'width':examen.progreso+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+              </div>
             </div>
           </div>
           <p></p>
@@ -58,7 +65,9 @@
             <p></p>
             <p></p>
             <div class="form-check">
-              <input [(ngModel)]="examen.preguntas[examen.preguntaActual].ru" [value]="examen.preguntas[examen.preguntaActual].r1" class="form-check-input" type="radio" name="r1" id="r1">
+              <input [(ngModel)]="examen.preguntas[examen.preguntaActual].ru"
+                [value]="examen.preguntas[examen.preguntaActual].r1" class="form-check-input" type="radio" name="r1"
+                id="r1">
               <label class="form-check-label" for="r1">
                 a) {{examen.preguntas[examen.preguntaActual].r1}}
               </label>
@@ -68,7 +77,9 @@
             <p></p>
             <p></p>
             <div class="form-check">
-              <input [(ngModel)]="examen.preguntas[examen.preguntaActual].ru" [value]="examen.preguntas[examen.preguntaActual].r2" class="form-check-input" type="radio" name="r2" id="r2">
+              <input [(ngModel)]="examen.preguntas[examen.preguntaActual].ru"
+                [value]="examen.preguntas[examen.preguntaActual].r2" class="form-check-input" type="radio" name="r2"
+                id="r2">
               <label class="form-check-label" for="r2">
                 b) {{examen.preguntas[examen.preguntaActual].r2}}
               </label>
@@ -78,7 +89,9 @@
             <p></p>
             <p></p>
             <div class="form-check">
-              <input [(ngModel)]="examen.preguntas[examen.preguntaActual].ru" [value]="examen.preguntas[examen.preguntaActual].r3" class="form-check-input" type="radio" name="r3" id="r3">
+              <input [(ngModel)]="examen.preguntas[examen.preguntaActual].ru"
+                [value]="examen.preguntas[examen.preguntaActual].r3" class="form-check-input" type="radio" name="r3"
+                id="r3">
               <label class="form-check-label" for="r3">
                 c) {{examen.preguntas[examen.preguntaActual].r3}}
               </label>
@@ -108,8 +121,10 @@
               </div>
               <div class="col-3">
                 <button type="button" class="btn btn-outline-primary">Atras</button>
-                <button type="button" class="btn btn-outline-primary" (click)="siguiente()" *ngIf="!finalizarButton">Siguiente</button>
-                <button type="button" class="btn btn-outline-primary"  data-toggle="modal" data-target="#exampleModal" (click)="finalizar()" *ngIf="finalizarButton">
+                <button type="button" class="btn btn-outline-primary" (click)="siguiente()"
+                  *ngIf="!finalizarButton">Siguiente</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"
+                  (click)="finalizar()" *ngIf="finalizarButton">
                   Finalizar
                 </button>
               </div>
@@ -130,7 +145,8 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

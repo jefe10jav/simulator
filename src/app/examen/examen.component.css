@@ -101,3 +101,13 @@ button[data-setter] {
   }
   
   #e-pointer { transition: transform 0.7s; }
+
+  #clock{
+    background: #e3f2fd;
+    padding: 5px;
+    margin: 5px 0;
+    color: black;
+    display: block;
+    font: 20px monospace;
+    width: 110px;
+}
